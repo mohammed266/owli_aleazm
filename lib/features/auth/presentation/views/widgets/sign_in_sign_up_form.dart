@@ -63,7 +63,9 @@ class _SignInSignUpFormState extends State<SignInSignUpForm> {
         if (isSignIn == false) const ForgetPassText(),
         const SizedBox(height: 25),
         CustomButton(
-          onTap: () {},
+          onTap: () {
+            GoRouter.of(context).push(AppRouter.kMyHomeView);
+          },
           text: "تسجيل الدخول",
         ),
         const SizedBox(height: 25),

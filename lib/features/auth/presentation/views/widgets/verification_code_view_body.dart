@@ -1,12 +1,11 @@
-
-
-
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/app_color.dart';
 import '../../../../../core/utils/styels.dart';
 import '../../../../../core/widgets/custom_button.dart';
-import 'custom_back_arrow.dart';
+import 'pin_input_section.dart';
+import 'show_alert_dialog.dart';
+import 'title_and_description.dart';
 
 class VerificationCodeViewBody extends StatelessWidget {
   const VerificationCodeViewBody({super.key});
@@ -20,33 +19,37 @@ class VerificationCodeViewBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const CustomBackArrow(),
-            const SizedBox(height: 15),
-            Text(
-              "رمز التحقق",
-              style: Styles.textStyle24.copyWith(
-                color: AppColor.kPrimaryColor,
-              ),
-            ),
-            const SizedBox(height: 15),
-            const Text(
-              "أدخل الرمز الذي أرسلناه إلى رقمك 012345*****",
-              style: Styles.textStyle16,
+            const TitleAndDescription(
+              title: "رمز التحقق",
+              description: "أدخل الرمز الذي أرسلناه إلى رقمك 012345*****",
             ),
             const SizedBox(height: 25),
-            // const FormItem(
-            //   text: "البريد الالكتروني",
-            //   keyboardType: TextInputType.emailAddress,
-            //   hint: "ادخل بريدك الالكتروني",
-            // ),
-            const SizedBox(height: 25),
+            const PinInputSection(),
+            const SizedBox(height: 35),
             CustomButton(
               onTap: () {
+                showAlertDialog(context);
                 // GoRouter.of(context).push(AppRouter.kVerificationCodeView);
               },
               text: "تحقق",
             ),
-
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'لم تستلم الرمز؟',
+                  style: Styles.textStyle16,
+                ),
+                Text(
+                  ' إعادة ارسال',
+                  style: Styles.textStyle16.copyWith(
+                    color: AppColor.kPrimaryColor,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

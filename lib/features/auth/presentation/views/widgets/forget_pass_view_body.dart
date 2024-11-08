@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:owli_aleazm/core/utils/app_router.dart';
-import '../../../../../core/utils/app_color.dart';
-import '../../../../../core/utils/styels.dart';
+import '../../../../../core/utils/app_router.dart';
+import 'title_and_description.dart';
 
 import '../../../../../core/widgets/custom_button.dart';
-import 'custom_back_arrow.dart';
 import 'form_item.dart';
 
 class ForgetPassViewBody extends StatelessWidget {
@@ -20,18 +18,9 @@ class ForgetPassViewBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const CustomBackArrow(),
-            const SizedBox(height: 15),
-            Text(
-              "نسيت كلمة المرور؟",
-              style: Styles.textStyle24.copyWith(
-                color: AppColor.kPrimaryColor,
-              ),
-            ),
-            const SizedBox(height: 15),
-            const Text(
-              "أدخل بريدك الإلكتروني لإعادة تعيين كلمة المرور الخاصة بك، وسنرسل لك رمز التأكيد",
-              style: Styles.textStyle16,
+            const TitleAndDescription(
+              title: "نسيت كلمة المرور؟",
+              description: "أدخل بريدك الإلكتروني لإعادة تعيين كلمة المرور الخاصة بك، وسنرسل لك رمز التأكيد",
             ),
             const SizedBox(height: 25),
             const FormItem(
