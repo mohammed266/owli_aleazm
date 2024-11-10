@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'home_view.dart';
 import 'widgets/my_curved_navigation_bar.dart';
 
 class MyHomeView extends StatefulWidget {
@@ -12,11 +13,11 @@ class MyHomeView extends StatefulWidget {
 class _MyHomeViewState extends State<MyHomeView> {
   int selectedIndex = 0;
   final List<Widget> pages = const [
-    Center(child: Text('Home Page1')),
-    Center(child: Text('Search Page2')),
-    Center(child: Text('Profile Page3')),
-    Center(child: Text('Profile Page4')),
-    Center(child: Text('Profile Page5')),
+    HomeView(),
+    Center(child: Text('Page2')),
+    Center(child: Text('Page3')),
+    Center(child: Text('Page4')),
+    Center(child: Text('Page5')),
   ];
   @override
   Widget build(BuildContext context) {

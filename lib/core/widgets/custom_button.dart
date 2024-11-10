@@ -11,11 +11,12 @@ class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     this.onTap,
-    required this.text,
+    required this.text, this.color,
   });
 
   final void Function()? onTap;
   final String text;
+  final Color? color;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -24,6 +25,7 @@ class CustomButton extends StatelessWidget {
         height: 45,
         width: double.infinity,
         decoration: BoxDecoration(
+          color: color,
           borderRadius: BorderRadius.circular(32),
           gradient: const LinearGradient(
             colors: [
