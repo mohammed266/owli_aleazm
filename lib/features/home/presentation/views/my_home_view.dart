@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'home_view.dart';
+import 'profile_view.dart';
 import 'widgets/my_curved_navigation_bar.dart';
 
 class MyHomeView extends StatefulWidget {
@@ -17,7 +18,7 @@ class _MyHomeViewState extends State<MyHomeView> {
     Center(child: Text('Page2')),
     Center(child: Text('Page3')),
     Center(child: Text('Page4')),
-    Center(child: Text('Page5')),
+    ProfileView(),
   ];
   @override
   Widget build(BuildContext context) {

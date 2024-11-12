@@ -16,6 +16,6 @@ abstract class AppColor{
   static const kNameColor = Color(0xff5C649D);
   static const kName1Color = Color(0xff9467DD);
   static const kYellowColor = Colors.yellow;
-
+  static const kPaleButterYellowColor = Color(0xffFFD08A);
 
  }
