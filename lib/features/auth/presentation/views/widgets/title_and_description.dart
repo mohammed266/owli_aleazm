@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/app_color.dart';
 import '../../../../../core/utils/styels.dart';
-import 'custom_back_arrow.dart';
+import '../../../../../core/widgets/custom_back_arrow.dart';
 
 class TitleAndDescription extends StatelessWidget {
   final String title;

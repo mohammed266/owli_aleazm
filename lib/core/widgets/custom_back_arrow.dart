@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../core/utils/app_color.dart';
+import '../utils/app_color.dart';
 
 class CustomBackArrow extends StatelessWidget {
   const CustomBackArrow({super.key,});
@@ -19,6 +19,7 @@ class CustomBackArrow extends StatelessWidget {
           height: 30,
           width: 30,
           decoration: BoxDecoration(
+            color: AppColor.kWhiteColor,
             border: Border.all(
               color: AppColor.kPrimaryColor,
             ),

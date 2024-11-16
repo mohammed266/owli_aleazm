@@ -1,9 +1,6 @@
-
-
-
-
 import 'package:flutter/material.dart';
-
+import 'package:go_router/go_router.dart';
+import '../../../../../core/utils/app_router.dart';
 import 'category_item.dart';
 
 class CategoryList extends StatelessWidget {
@@ -17,22 +14,27 @@ class CategoryList extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           CategoryItem(
-            onTap: (){},
+            onTap: () {
+              GoRouter.of(context).push(AppRouter.kQuranView);
+            },
             title: "قرآن",
             image: "assets/images/img_11.png",
           ),
           CategoryItem(
-            onTap: (){},
+            onTap: () {
+              GoRouter.of(context).push(AppRouter.kHadithBookView);
+
+            },
             title: "حديث",
             image: "assets/images/img_10.png",
           ),
           CategoryItem(
-            onTap: (){},
+            onTap: () {},
             title: "الصلاة",
             image: "assets/images/img_9.png",
           ),
           CategoryItem(
-            onTap: (){},
+            onTap: () {},
             title: "التقويم",
             image: "assets/images/img_8.png",
           ),

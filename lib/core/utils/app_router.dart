@@ -4,17 +4,26 @@ import 'package:go_router/go_router.dart';
 import '../../features/auth/presentation/views/forget_pass_view.dart';
 import '../../features/auth/presentation/views/sign_in_sign_up_view.dart';
 import '../../features/auth/presentation/views/verification_code_view.dart';
+import '../../features/home/data/models/surah_number.dart';
+import '../../features/home/presentation/views/hadith_Book_view.dart';
+import '../../features/home/presentation/views/hadith_view.dart';
 import '../../features/home/presentation/views/my_home_view.dart';
+import '../../features/home/presentation/views/quran_view.dart';
+import '../../features/home/presentation/views/surah_view.dart';
 import '../../features/splash/presentation/views/onboarding_view.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
 
 abstract class AppRouter {
-  // SignInSignUpView; VerificationCodeView
+  // SignInSignUpView; VerificationCodeView HadithView
   static const kOnboardingView = '/OnboardingView';
   static const kSignInSignUpView = '/SignInSignUpView';
   static const kForgetPassView = '/ForgetPassView';
   static const kVerificationCodeView = '/VerificationCodeView';
   static const kMyHomeView = '/MyHomeView';
+  static const kQuranView = '/QuranView';
+  static const kSurahView = '/SurahView';
+  static const kHadithBookView = '/HadithBookView';
+  static const kHadithView = '/HadithView';
 
   static final GoRouter router = GoRouter(
     routes: <RouteBase>[
@@ -53,6 +62,37 @@ abstract class AppRouter {
         path: kMyHomeView,
         builder: (BuildContext context, GoRouterState state) {
           return const MyHomeView();
+        },
+      ),
+      GoRoute(
+        path: kQuranView,
+        builder: (BuildContext context, GoRouterState state) {
+          return const QuranView();
+        },
+      ),
+      GoRoute(
+        path: kSurahView,
+        builder: (BuildContext context, GoRouterState state) {
+          return SurahView(
+            surahList: state.extra as Surah,
+          );
+        },
+      ),
+      GoRoute(
+        path: kHadithBookView,
+        builder: (BuildContext context, GoRouterState state) {
+          return const HadithBookView();
+        },
+      ),
+      GoRoute(
+        path: kHadithView,
+        builder: (
+          BuildContext context,
+          GoRouterState state,
+        ) {
+          return HadithView(
+            bookId: state.extra as String,
+          );
         },
       ),
       // GoRoute(
