@@ -22,7 +22,7 @@ class SkipButton extends StatelessWidget {
           // color: Colors.white,
           borderRadius: BorderRadius.circular(31),
           border: Border.all(
-            color: AppColor.kOnboardingButtonColor,
+            color: AppColor.kGrayTextColor,
             width: 2,
           ),
         ),
@@ -30,7 +30,7 @@ class SkipButton extends StatelessWidget {
           child: Text(
             "تخطي",
             style: Styles.textStyle20.copyWith(
-              color: AppColor.kOnboardingButtonColor,
+              color: AppColor.kGrayTextColor,
             ),
           ),
         ),

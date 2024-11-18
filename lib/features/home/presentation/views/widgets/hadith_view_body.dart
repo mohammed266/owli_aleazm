@@ -33,6 +33,7 @@ class _HadithViewBodyState extends State<HadithViewBody> {
               final List<Hadith> hadithList = state.hadithList;
               return Expanded(
                 child: ListView.builder(
+                  physics: const BouncingScrollPhysics(),
                   itemCount: hadithList.length,
                   itemBuilder: (context, index) => Container(
                     margin:

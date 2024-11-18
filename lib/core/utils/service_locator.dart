@@ -6,6 +6,7 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../features/home/data/repos/hadith_repo/hadith_repo_impl.dart';
+import '../../features/home/data/repos/religious_books_repo/religious_books_repo_impl.dart';
 import '../../features/home/data/repos/surah_repo/surah_repo_impl.dart';
 import 'api_service.dart';
 
@@ -24,6 +25,11 @@ void setupServiceLocator() {
   );
   getIt.registerSingleton<HadithRepoImpl>(
     HadithRepoImpl(
+      getIt.get<ApiService>(),
+    ),
+  );
+  getIt.registerSingleton<ReligiousBooksRepoImpl>(
+    ReligiousBooksRepoImpl(
       getIt.get<ApiService>(),
     ),
   );

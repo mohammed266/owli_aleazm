@@ -1,27 +1,31 @@
-import 'dart:convert';
+
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+
 import '../../../../../core/utils/api_service.dart';
 import '../../../../../core/utils/errors/failure.dart';
-import '../../models/hadith_book.dart';
-import "hadith_repo.dart";
 
-class HadithRepoImpl implements HadithRepo {
+import '../../models/ReligiousBooks.dart';
+
+import 'religious_books_repo.dart';
+
+class ReligiousBooksRepoImpl implements ReligiousBooksRepo{
   ApiService apiService;
-  HadithRepoImpl(this.apiService);
+  ReligiousBooksRepoImpl(this.apiService);
   @override
-  Future<Either<Failure, List<Book>>> fetchHadithBooks() async {
+  Future<Either<Failure, List<ReligiousBooks>>> fetchReligiousBooks() async {
+
     try {
       var data = await apiService.get(
-        baseUrl: 'https://api.hadith.gading.dev/',
-        endPoint: 'books/',
+        baseUrl: 'https://api3.islamhouse.com/v3/',
+        endPoint: 'paV29H2gm56kvLPy/main/get-category-items/5366/books/ar/ar/1/20/json',
       );
 
       if (data["data"] is List) {
-        List<Book> bookList = [];
+        List<ReligiousBooks> bookList = [];
         for (var item in data["data"]) {
-          bookList.add(Book.fromJson(item));
+          bookList.add(ReligiousBooks.fromJson(item));
         }
         return Right(bookList);
       } else {
@@ -38,20 +42,17 @@ class HadithRepoImpl implements HadithRepo {
   }
 
   @override
-  Future<Either<Failure, List<Hadith>>> fetchHadith(String bookId) async {
+  Future<Either<Failure,ReligiousBooks>> fetchReligiousBookDetails({required int id}) async{
     try {
-      // https://api.hadith.gading.dev/books/bukhari?range=300-500.
       var data = await apiService.get(
-        baseUrl: 'https://api.hadith.gading.dev/',
-        endPoint: 'books/$bookId?range=300-500.',
+        baseUrl: 'https://api3.islamhouse.com/v3/',
+        endPoint: 'paV29H2gm56kvLPy/main/get-item/$id/ar/json',
       );
 
-      if (data["data"]["hadiths"] is List) {
-        List<Hadith> hadithList = [];
-        for (var item in data["data"]["hadiths"]) {
-          hadithList.add(Hadith.fromJson(item));
-        }
-        return Right(hadithList);
+      if (data['id'] != null) {
+        // Parse data to ReligiousBooks model
+        ReligiousBooks book = ReligiousBooks.fromJson(data);
+        return Right(book);
       } else {
         return Left(
             ServerFailure('Invalid response format. Expected a list of data.'));
@@ -64,4 +65,5 @@ class HadithRepoImpl implements HadithRepo {
       return Left(ServerFailure(e.toString()));
     }
   }
+
 }

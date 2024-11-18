@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../../core/utils/app_color.dart';
 import '../../../../../core/utils/styels.dart';
 import 'circular_slider.dart';
+import 'my_hijri_date_widget.dart';
 
 class SliderContainer extends StatelessWidget {
   const SliderContainer({super.key});
@@ -36,30 +37,13 @@ class SliderContainer extends StatelessWidget {
               size: 30,
             ),
             const Spacer(),
-            Row(
+             const Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const CircularSlider(),
-                const Spacer(),
-                Column(
-                  children: [
-                    Text(
-                      "الثلاثاء , 13 مارس",
-                      style: Styles.textStyle16.copyWith(
-                        color: AppColor.kWhiteColor,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    Text(
-                      "3 رمضان | 1445 هجري",
-                      style: Styles.textStyle16.copyWith(
-                        color: AppColor.kWhiteColor,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
+                CircularSlider(),
+                Spacer(),
+                MyHijriDateWidget(),
               ],
             ),
             const Spacer(),

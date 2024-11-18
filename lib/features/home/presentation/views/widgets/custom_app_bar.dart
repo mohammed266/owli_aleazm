@@ -5,8 +5,9 @@ import '../../../../../core/utils/styels.dart';
 import '../../../../../core/widgets/custom_back_arrow.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key, required this.title});
+  const CustomAppBar({super.key, required this.title,this.navBar = false});
   final String title;
+  final bool navBar;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,7 +29,7 @@ class CustomAppBar extends StatelessWidget {
                 ),
               ),
             ),
-            const CustomBackArrow(),
+            if(!navBar)  const CustomBackArrow(),
           ],
         ),
       ),

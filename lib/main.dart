@@ -6,9 +6,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'core/utils/app_router.dart';
 import 'core/utils/service_locator.dart';
 import 'features/home/data/repos/hadith_repo/hadith_repo_impl.dart';
+import 'features/home/data/repos/religious_books_repo/religious_books_repo_impl.dart';
 import 'features/home/data/repos/surah_repo/surah_repo_impl.dart';
 import 'features/home/presentation/manager/hadith_book_cubit/hadith_book_cubit.dart';
 import 'features/home/presentation/manager/hadith_cubit/hadith_cubit.dart';
+import 'features/home/presentation/manager/religious_book_details_cubit/religious_book_details_cubit.dart';
+import 'features/home/presentation/manager/religious_books_cubit/religious_books_cubit.dart';
 import 'features/home/presentation/manager/surah_list_cubit/surah_list_cubit.dart';
 
 void main() {
@@ -42,6 +45,16 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => HadithCubit(
             getIt.get<HadithRepoImpl>(),
+          ),
+        ),
+        BlocProvider(
+          create: (context) => ReligiousBooksCubit(
+            getIt.get<ReligiousBooksRepoImpl>(),
+          )..fetchReligiousBooksList(),
+        ),
+        BlocProvider(
+          create: (context) => ReligiousBookDetailsCubit(
+            getIt.get<ReligiousBooksRepoImpl>(),
           ),
         ),
       ],

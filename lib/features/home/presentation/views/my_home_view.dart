@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'home_view.dart';
 import 'profile_view.dart';
+import 'religious_books_view.dart';
+import 'sebha_tab_view.dart';
 import 'widgets/my_curved_navigation_bar.dart';
 
 class MyHomeView extends StatefulWidget {
@@ -16,8 +18,8 @@ class _MyHomeViewState extends State<MyHomeView> {
   final List<Widget> pages = const [
     HomeView(),
     Center(child: Text('Page2')),
-    Center(child: Text('Page3')),
-    Center(child: Text('Page4')),
+    ReligiousBooksView(),
+    SebhaTabView(),
     ProfileView(),
   ];
   @override
