@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'home_view.dart';
+import 'khotab_view.dart';
 import 'profile_view.dart';
 import 'religious_books_view.dart';
 import 'sebha_tab_view.dart';
@@ -17,7 +18,7 @@ class _MyHomeViewState extends State<MyHomeView> {
   int selectedIndex = 0;
   final List<Widget> pages = const [
     HomeView(),
-    Center(child: Text('Page2')),
+    KhotabView(),
     ReligiousBooksView(),
     SebhaTabView(),
     ProfileView(),

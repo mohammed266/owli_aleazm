@@ -3,7 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../data/models/ReligiousBooks.dart';
+import '../../../data/models/religious_books.dart';
 import '../../../data/repos/religious_books_repo/religious_books_repo.dart';
 
 part 'religious_book_details_state.dart';

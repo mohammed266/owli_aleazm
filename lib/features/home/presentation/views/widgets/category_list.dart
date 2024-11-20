@@ -23,18 +23,21 @@ class CategoryList extends StatelessWidget {
           CategoryItem(
             onTap: () {
               GoRouter.of(context).push(AppRouter.kHadithBookView);
-
             },
             title: "حديث",
             image: "assets/images/img_10.png",
           ),
           CategoryItem(
-            onTap: () {},
-            title: "الصلاة",
+            onTap: () {
+              GoRouter.of(context).push(AppRouter.kReligionLessonsView);
+            },
+            title: "دروس دين",
             image: "assets/images/img_9.png",
           ),
           CategoryItem(
-            onTap: () {},
+            onTap: () {
+              GoRouter.of(context).push(AppRouter.kHijriCalendarView);
+            },
             title: "التقويم",
             image: "assets/images/img_8.png",
           ),

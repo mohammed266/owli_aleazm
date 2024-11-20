@@ -9,6 +9,7 @@
         </intent>
     </queries>
     <application
+        android:usesCleartextTraffic="true"
         android:label="owli_aleazm"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">

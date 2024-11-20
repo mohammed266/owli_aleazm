@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/app_color.dart';
-import '../../../../../core/utils/styels.dart';
+import '../utils/app_color.dart';
+import '../utils/styels.dart';
 
 class TabBarTitle extends StatelessWidget {
   final bool isSignIn;
   final ValueChanged<bool> onTabChanged;
+  final String textOne, textTwo;
 
   const TabBarTitle({
     required this.isSignIn,
     required this.onTabChanged,
     super.key,
+    required this.textOne,
+    required this.textTwo,
   });
 
   @override
@@ -35,7 +38,7 @@ class TabBarTitle extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    "تسجيل الدخول",
+                    textOne,
                     style: Styles.textStyle16.copyWith(
                       color: !isSignIn ? AppColor.kPrimaryColor : Colors.black,
                     ),
@@ -55,7 +58,7 @@ class TabBarTitle extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    "إنشاء حساب",
+                    textTwo,
                     style: Styles.textStyle16.copyWith(
                       color: isSignIn ? AppColor.kPrimaryColor : Colors.black,
                     ),

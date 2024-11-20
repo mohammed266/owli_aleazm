@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../data/models/ReligiousBooks.dart';
+import '../../data/models/religious_books.dart';
 import 'widgets/religious_book_details_view_body.dart';
 
 class ReligiousBookDetailsView extends StatelessWidget {

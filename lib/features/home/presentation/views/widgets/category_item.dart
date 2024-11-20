@@ -1,14 +1,15 @@
-
-
-
-
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/app_color.dart';
 import '../../../../../core/utils/styels.dart';
 
 class CategoryItem extends StatelessWidget {
-  const CategoryItem({super.key, this.onTap, required this.image, required this.title});
+  const CategoryItem({
+    super.key,
+    this.onTap,
+    required this.image,
+    required this.title,
+  });
   final void Function()? onTap;
   final String image;
   final String title;
@@ -35,9 +36,12 @@ class CategoryItem extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 5),
-          Text(title,style: Styles.textStyle16.copyWith(
-            color: AppColor.kPrimaryColor,
-          ),),
+          Text(
+            title,
+            style: Styles.textStyle16.copyWith(
+              color: AppColor.kPrimaryColor,
+            ),
+          ),
         ],
       ),
     );

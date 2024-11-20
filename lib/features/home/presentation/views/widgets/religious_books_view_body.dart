@@ -5,7 +5,7 @@ import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/styels.dart';
 
 import '../../../../../core/utils/app_color.dart';
-import '../../../data/models/ReligiousBooks.dart';
+import '../../../data/models/religious_books.dart';
 import '../../manager/religious_books_cubit/religious_books_cubit.dart';
 import 'custom_app_bar.dart';
 

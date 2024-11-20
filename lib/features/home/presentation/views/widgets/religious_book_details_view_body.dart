@@ -5,7 +5,7 @@ import '../../../../../core/utils/app_color.dart';
 import '../../../../../core/utils/functions/launch_custom_url.dart';
 import '../../../../../core/utils/styels.dart';
 import '../../../../../core/widgets/custom_back_arrow.dart';
-import '../../../data/models/ReligiousBooks.dart';
+import '../../../data/models/religious_books.dart';
 import "../../manager/religious_book_details_cubit/religious_book_details_cubit.dart";
 
 class ReligiousBookDetailsViewBody extends StatefulWidget {

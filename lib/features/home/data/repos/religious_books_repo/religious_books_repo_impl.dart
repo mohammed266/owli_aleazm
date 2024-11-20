@@ -6,7 +6,7 @@ import 'package:dio/dio.dart';
 import '../../../../../core/utils/api_service.dart';
 import '../../../../../core/utils/errors/failure.dart';
 
-import '../../models/ReligiousBooks.dart';
+import '../../models/religious_books.dart';
 
 import 'religious_books_repo.dart';
 

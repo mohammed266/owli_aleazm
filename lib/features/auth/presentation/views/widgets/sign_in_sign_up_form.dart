@@ -7,7 +7,7 @@ import '../../../../../core/utils/styels.dart';
 import '../../../../../core/widgets/custom_button.dart';
 import 'accept_terms_checkbox.dart';
 import 'form_item.dart';
-import 'tab_bar_title.dart';
+import '../../../../../core/widgets/tab_bar_title.dart';
 
 class SignInSignUpForm extends StatefulWidget {
   const SignInSignUpForm({super.key});
@@ -26,6 +26,8 @@ class _SignInSignUpFormState extends State<SignInSignUpForm> {
       children: [
         TabBarTitle(
           isSignIn: isSignIn,
+          textOne: "تسجيل الدخول",
+          textTwo: "إنشاء حساب",
           onTabChanged: (bool newValue) {
             setState(() {
               isSignIn = newValue;
