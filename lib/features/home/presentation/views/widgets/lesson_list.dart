@@ -42,6 +42,7 @@ class LessonList extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                           fontSize: 22,
                         ),
+                        maxLines: 1,
                       ),
                       const SizedBox(height: 15),
                       Text(
@@ -51,6 +52,7 @@ class LessonList extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                         ),
                         textAlign: TextAlign.start,
+                        maxLines: 3,
                       ),
                       const SizedBox(height: 20),
                       if (isAudio) buildAudioPlayerSlider(lesson),

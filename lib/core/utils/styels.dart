@@ -40,5 +40,10 @@ abstract class Styles{
     fontSize: 32,
     color: AppColor.kWhiteColor,
   );
+  static const textStyle36 = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 36,
+    color: AppColor.kWhiteColor,
+  );
 
 }

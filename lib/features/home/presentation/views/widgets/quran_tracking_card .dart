@@ -1,11 +1,18 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/app_color.dart';
 import '../../../../../core/utils/styels.dart';
 
 class QuranTrackingCard extends StatelessWidget {
-  const QuranTrackingCard({super.key});
+  const QuranTrackingCard({
+    super.key,
+    required this.surahName,
+    required this.currentAyah,
+    this.onPressed,
+  });
+  final String surahName;
+  final int currentAyah;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +32,17 @@ class QuranTrackingCard extends StatelessWidget {
             ),
           ),
         ),
-        child: const Padding(
-          padding: EdgeInsets.all(8.0),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
           child: Row(
             children: [
-              QuranTrackingText(),
-              Spacer(),
-              QuranTrackingImage(),
+              QuranTrackingText(
+                surahName: surahName,
+                currentAyah: currentAyah,
+                onPressed: onPressed,
+              ),
+              const Spacer(),
+              const QuranTrackingImage(),
             ],
           ),
         ),
@@ -41,8 +52,15 @@ class QuranTrackingCard extends StatelessWidget {
 }
 
 class QuranTrackingText extends StatelessWidget {
-  const QuranTrackingText({super.key});
-
+  const QuranTrackingText({
+    super.key,
+    required this.surahName,
+    required this.currentAyah,
+    this.onPressed,
+  });
+  final String surahName;
+  final int currentAyah;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -57,34 +75,43 @@ class QuranTrackingText extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
           ),
         ),
-        const SurahAndPageRow(),
-        const PageRow(),
-        const FollowButton(),
+        SurahAndPageRow(
+          surahName: surahName,
+        ),
+        PageRow(
+          currentAyah: currentAyah,
+        ),
+        FollowButton(
+          onPressed: onPressed,
+        ),
       ],
     );
   }
 }
 
 class SurahAndPageRow extends StatelessWidget {
-  const SurahAndPageRow({super.key});
-
+  const SurahAndPageRow({
+    super.key,
+    required this.surahName,
+  });
+  final String surahName;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Text(
-          "توقفت عند سورة",
-          style: Styles.textStyle16.copyWith(
+          "توقفت عند ",
+          style: Styles.textStyle14.copyWith(
             color: AppColor.kWhiteColor,
             fontWeight: FontWeight.w400,
             overflow: TextOverflow.ellipsis,
           ),
         ),
         Text(
-          " النساء",
-          style: Styles.textStyle16.copyWith(
-            color: AppColor.kGradientColor,
-            fontWeight: FontWeight.w400,
+          surahName,
+          style: Styles.textStyle18.copyWith(
+            color: AppColor.kYellowColor,
+            fontWeight: FontWeight.bold,
             overflow: TextOverflow.ellipsis,
           ),
         ),
@@ -94,24 +121,27 @@ class SurahAndPageRow extends StatelessWidget {
 }
 
 class PageRow extends StatelessWidget {
-  const PageRow({super.key});
-
+  const PageRow({
+    super.key,
+    required this.currentAyah,
+  });
+  final int currentAyah;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Text(
-          "صفحة",
+          "ايه رقم ",
           style: Styles.textStyle16.copyWith(
             color: AppColor.kWhiteColor,
             fontWeight: FontWeight.w400,
           ),
         ),
         Text(
-          " 79",
-          style: Styles.textStyle16.copyWith(
-            color: AppColor.kGradientColor,
-            fontWeight: FontWeight.w400,
+          "$currentAyah",
+          style: Styles.textStyle18.copyWith(
+            color: AppColor.kYellowColor,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ],
@@ -120,12 +150,12 @@ class PageRow extends StatelessWidget {
 }
 
 class FollowButton extends StatelessWidget {
-  const FollowButton({super.key});
-
+  const FollowButton({super.key, this.onPressed});
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () {},
+      onPressed: onPressed,
       icon: Text(
         'متابعة الحفظ',
         style: Styles.textStyle16.copyWith(

@@ -82,8 +82,11 @@ abstract class AppRouter {
       GoRoute(
         path: kSurahView,
         builder: (BuildContext context, GoRouterState state) {
+          // final SurahData data =  state.extra as SurahData;
           return SurahView(
-            surahList: state.extra as Surah,
+            // surahList: data.surah,
+             surahList: state.extra as Surah,
+            // /initialAyah: data.initialAyah,
           );
         },
       ),

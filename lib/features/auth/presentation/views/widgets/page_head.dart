@@ -15,8 +15,8 @@ class PageHead extends StatelessWidget {
     return const Column(
       children: [
         CustomGradientText(
-          text: "أولي العزم",
-          style: Styles.textStyle32,
+          text: "ذَكِّرْ",
+          style: Styles.textStyle36,
         ),
         SizedBox(height: 7),
         Text(

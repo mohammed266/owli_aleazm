@@ -42,7 +42,8 @@ class SliderContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CircularSlider(),
-                Spacer(),
+                SizedBox(width: 20),
+                // Spacer(),
                 MyHijriDateWidget(),
               ],
             ),

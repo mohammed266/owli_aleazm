@@ -1,10 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'core/utils/app_router.dart';
 import 'core/utils/service_locator.dart';
+import 'features/auth/manager/signin_signup_cubit/signin_sinup_cubit.dart';
 import 'features/home/data/repos/audio_lessons_repo/audio_lessons_repo_impl.dart';
 import 'features/home/data/repos/hadith_repo/hadith_repo_impl.dart';
 import 'features/home/data/repos/khotab_repo/khotab_repo_impl.dart';
@@ -15,13 +18,20 @@ import 'features/home/presentation/manager/audio_lessons_cubit/audio_lessons_cub
 import 'features/home/presentation/manager/hadith_book_cubit/hadith_book_cubit.dart';
 import 'features/home/presentation/manager/hadith_cubit/hadith_cubit.dart';
 import 'features/home/presentation/manager/khotab_cubit/khotab_cubit.dart';
+import 'features/home/presentation/manager/quran_progress_cubit/quran_progress_cubit.dart';
 import 'features/home/presentation/manager/religion_lessons_cubit/religion_lessons_cubit.dart';
 import 'features/home/presentation/manager/religious_book_details_cubit/religious_book_details_cubit.dart';
 import 'features/home/presentation/manager/religious_books_cubit/religious_books_cubit.dart';
 import 'features/home/presentation/manager/surah_list_cubit/surah_list_cubit.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   setupServiceLocator();
+  // debugPaintSizeEnabled = true;
   runApp(const MyApp());
 }
 
@@ -38,6 +48,7 @@ class MyApp extends StatelessWidget {
     );
     return MultiBlocProvider(
       providers: [
+        BlocProvider(create: (context) => SigninSignupCubit()),
         BlocProvider(
           create: (context) => SurahListCubit(
             getIt.get<SurahRepoImpl>(),
@@ -77,6 +88,9 @@ class MyApp extends StatelessWidget {
           create: (context) => AudioLessonsCubit(
             getIt.get<AudioLessonsRepoImpl>(),
           )..fetchLessonsList(),
+        ),
+        BlocProvider(
+          create: (context) => QuranProgressCubit()..loadProgress(),
         ),
       ],
       child: MaterialApp.router(

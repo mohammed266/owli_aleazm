@@ -1,6 +1,8 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../../core/utils/app_router.dart';
 
 import '../../../../../core/utils/app_color.dart';
 import '../../../../../core/utils/styels.dart';
@@ -48,7 +50,9 @@ void showAlertDialog(BuildContext context) {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: CustomButton(
-              onTap: () {},
+              onTap: () {
+                 GoRouter.of(context).push(AppRouter.kMyHomeView);
+              },
               text: "تسجيل الدخول",
             ),
           ),

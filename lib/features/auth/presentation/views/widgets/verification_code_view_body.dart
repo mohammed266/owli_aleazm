@@ -29,7 +29,6 @@ class VerificationCodeViewBody extends StatelessWidget {
             CustomButton(
               onTap: () {
                 showAlertDialog(context);
-                // GoRouter.of(context).push(AppRouter.kVerificationCodeView);
               },
               text: "تحقق",
             ),
