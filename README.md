@@ -17,7 +17,6 @@ leveraging Cubit for state management.
 ---
 ## App Screenshot
 
-<img src="https://github.com/user-attachments/assets/91c7016e-a6d6-4855-8304-a2c678affecc" alt="App Screenshot" width="300" height="450">
 <img src="https://github.com/user-attachments/assets/91c7016e-a6d6-4855-8304-a2c678affecc" alt="Splash Screen" width="300" height="450">
 <img src="https://github.com/user-attachments/assets/0b357596-2a99-4e36-a97f-247f6b55f424" alt="Onboarding Screen" width="300" height="450">
 <img src="https://github.com/user-attachments/assets/456bffe3-7125-4b38-880c-5f9919104daa" alt="Authentication Screen" width="300" height="450">
