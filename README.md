@@ -15,7 +15,15 @@ leveraging Cubit for state management.
 - [Contact](#contact)
 
 ---
-![IMG-20241211-WA0005](https://github.com/user-attachments/assets/57cc589b-2f15-4fc8-b5c6-60d03a76448c)
+![IMG-20241211-WA0009](https://github.com/user-attachments/assets/91c7016e-a6d6-4855-8304-a2c678affecc)
+![IMG-20241211-WA0008](https://github.com/user-attachments/assets/0b357596-2a99-4e36-a97f-247f6b55f424)
+![IMG-20241211-WA0007](https://github.com/user-attachments/assets/456bffe3-7125-4b38-880c-5f9919104daa)
+![IMG-20241211-WA0006](https://github.com/user-attachments/assets/9e19f12e-99aa-4c3e-8114-023f17b093ea)
+![IMG-20241211-WA0005](https://github.com/user-attachments/assets/f95936a4-bc21-407c-bb31-73a8d46e203b)
+![IMG-20241211-WA0004](https://github.com/user-attachments/assets/e0e64b71-1a23-4e81-9c4c-5ee4ab69f26a)
+![IMG-20241211-WA0003](https://github.com/user-attachments/assets/75428da9-2786-40d6-add6-ae11c668adc8)
+![IMG-20241211-WA0002](https://github.com/user-attachments/assets/8984035f-d332-425c-9317-c6f3dd1b142e)
+![IMG-20241211-WA0001](https://github.com/user-attachments/assets/fc08e2a3-20cd-4540-9e17-bafa2b925fb2)
 
 ## Features
 - **Qur’an Recitation**: Read and recite the Holy Qur’an.
