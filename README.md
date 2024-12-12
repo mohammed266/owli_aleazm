@@ -15,6 +15,7 @@ leveraging Cubit for state management.
 - [Contact](#contact)
 
 ---
+![IMG-20241211-WA0005](https://github.com/user-attachments/assets/57cc589b-2f15-4fc8-b5c6-60d03a76448c)
 
 ## Features
 - **Qur’an Recitation**: Read and recite the Holy Qur’an.
